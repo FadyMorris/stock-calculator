@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>347</width>
-    <height>265</height>
+    <height>368</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,12 +22,18 @@
         <property name="text">
          <string>Buy</string>
         </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
        <widget class="QRadioButton" name="radioButton_sell">
         <property name="text">
          <string>Sell</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -93,6 +99,13 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>test</string>
+      </property>
+     </widget>
     </item>
     <item>
      <spacer name="verticalSpacer">

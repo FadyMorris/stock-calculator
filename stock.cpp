@@ -2,7 +2,7 @@
 
 Stock::Stock()
 {
-
+    price = qty = brokerage = total = 0;
 }
 
 void Stock::setPrice(double price)
