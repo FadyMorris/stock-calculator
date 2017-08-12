@@ -62,7 +62,11 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_price"/>
+       <widget class="QLineEdit" name="lineEdit_price">
+        <property name="maxLength">
+         <number>19</number>
+        </property>
+       </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_qty">
@@ -72,7 +76,11 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_qty"/>
+       <widget class="QLineEdit" name="lineEdit_qty">
+        <property name="maxLength">
+         <number>19</number>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_total">
@@ -82,7 +90,11 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_total"/>
+       <widget class="QLineEdit" name="lineEdit_total">
+        <property name="maxLength">
+         <number>19</number>
+        </property>
+       </widget>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_brokerage">
@@ -103,7 +115,7 @@
     <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>test</string>
+       <string>Reset</string>
       </property>
      </widget>
     </item>

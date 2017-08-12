@@ -5,26 +5,26 @@ Stock::Stock()
     price = qty = brokerage = total = 0;
 }
 
-void Stock::setPrice(double price)
+void Stock::setPrice(long double price)
 {
     this->price = price;
     calculateTotal();
     calculateBrokerage();
 }
 
-double Stock::getPrice()
+long double Stock::getPrice()
 {
     return price;
 }
 
-void Stock::setQty(int qty)
+void Stock::setQty(unsigned long long qty)
 {
     this->qty = qty;
     calculateTotal();
     calculateBrokerage();
 }
 
-int Stock::getQty()
+unsigned long long Stock::getQty()
 {
     return qty;
 }
@@ -46,12 +46,12 @@ void Stock::calculateBrokerage()
             ;
 }
 
-double Stock::getTotal()
+long double Stock::getTotal()
 {
     return total;
 }
 
-double Stock::getBrokerage()
+long double Stock::getBrokerage()
 {
     return brokerage;
 }

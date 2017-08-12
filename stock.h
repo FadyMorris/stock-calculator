@@ -4,20 +4,20 @@
 
 class Stock
 {
-    double price, total, brokerage; // Price total and Brokerage
-    int qty; //Quantity
+    long double price, total, brokerage; // Price total and Brokerage
+    unsigned long long qty; //Quantity
     void calculateTotal();
     void calculateBrokerage();
 public:
     Stock();
-    void setPrice(double);
-    double getPrice();
+    void setPrice(long double);
+    long double getPrice();
 
-    void setQty(int);
-    int getQty();
+    void setQty(unsigned long long);
+    unsigned long long getQty();
 
-    double getTotal();
-    double getBrokerage();
+    long double getTotal();
+    long double getBrokerage();
 };
 
 #endif // STOCK_H

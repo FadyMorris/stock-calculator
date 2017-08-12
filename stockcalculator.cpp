@@ -14,6 +14,13 @@ StockCalculator::~StockCalculator()
 }
 
 
+QString StockCalculator::qStringFromLongDouble(const long double myLongDouble)
+{
+  std::stringstream ss;
+  ss << std::fixed << std::setprecision(2) << myLongDouble;
+  return QString::fromStdString(ss.str());
+}
+
 void StockCalculator::on_lineEdit_price_textEdited(const QString &price)
 {
 
@@ -32,14 +39,14 @@ void StockCalculator::on_pushButton_clicked()
 
 void StockCalculator::on_lineEdit_qty_textEdited(const QString &qty)
 {
-    stock.setQty(qty.toInt());
+    stock.setQty(qty.toULongLong());
     updateTotal();
     updateBrokerage();
 }
 
 void StockCalculator::on_lineEdit_total_textEdited(const QString &total)
 {
-    stock.setQty(total.toDouble()/stock.getPrice());
+    stock.setQty(total.toULongLong()/stock.getPrice());
     ui->lineEdit_qty->setText(QString::number(stock.getQty()));
     updateBrokerage();
 }
@@ -60,13 +67,17 @@ void StockCalculator::on_radioButton_sell_clicked()
 void StockCalculator::updateTotal()
 {
     if(ui->radioButton_buy->isChecked())
-        ui->lineEdit_total->setText(QString::number(stock.getTotal() + stock.getBrokerage()));
+    {
+        ui->lineEdit_total->setText(StockCalculator::qStringFromLongDouble(stock.getTotal() + stock.getBrokerage()));
+    }
     else
-        ui->lineEdit_total->setText(QString::number(stock.getTotal() - stock.getBrokerage()));
+    {
+        ui->lineEdit_total->setText(qStringFromLongDouble(stock.getTotal() - stock.getBrokerage()));
+    }
 }
 
 void StockCalculator::updateBrokerage()
 {
-    ui->label_brokerage_value->setText(QString::number(stock.getBrokerage()));
+    ui->label_brokerage_value->setText(qStringFromLongDouble(stock.getBrokerage()));
 }
 

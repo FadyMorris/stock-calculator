@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QtDebug>
 #include "stock.h"
+#include <sstream>
+#include <iomanip>
 namespace Ui {
 class StockCalculator;
 }
@@ -15,6 +17,7 @@ class StockCalculator : public QMainWindow
 public:
     explicit StockCalculator(QWidget *parent = 0);
     ~StockCalculator();
+    static QString qStringFromLongDouble(const long double);
 //    int i; //temp
 
 
