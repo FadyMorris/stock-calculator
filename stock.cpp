@@ -5,6 +5,20 @@ Stock::Stock()
     price = qty = brokerage = total = 0;
 }
 
+long double Stock::getVariableBrokerage(const long double multiplicand)
+{
+    double brokerage;
+    brokerage = 0;
+    brokerage += round(multiplicand*100*0.0002)/100 \
+    + round(multiplicand*100*0.005)/100 \
+    + round(multiplicand*100*0.0005)/100 \
+    + round(multiplicand*100*0.00012)/100 \
+    + round(multiplicand*100*0.000125)/100 \
+    + round(multiplicand*100*0.00125)/100 \
+    ;
+    return brokerage;
+}
+
 void Stock::setPrice(long double price)
 {
     this->price = price;
@@ -36,14 +50,34 @@ void Stock::calculateTotal()
 
 void Stock::calculateBrokerage()
 {
-    brokerage = 11 \
-            + round(total*100*0.0002)/100 \
-            + round(total*100*0.005)/100 \
-            + round(total*100*0.0005)/100 \
-            + round(total*100*0.00012)/100 \
-            + round(total*100*0.000125)/100 \
-            + round(total*100*0.00125)/100 \
-            ;
+    brokerage = 11 + getVariableBrokerage(total);
+}
+
+void Stock::setTotal(long double total, long double price, bool buyFlag)
+{
+    this->total = total;
+    calculateBrokerage();
+    if(buyFlag)
+    {
+        this->qty = (this->total - this->brokerage) / price ;
+    }
+    else
+    {
+        this->qty = (this->total + this->brokerage) / price ;
+    }
+/*
+    this->total = total;
+    this->price = price;
+    if(buyFlag) //Calculate for buying operation
+    {
+        this->qty = (total + 11)/(price - getVariableBrokerage(price));
+    }
+    else
+    {
+        this->qty = (total - 11)/(price + getVariableBrokerage(price));
+    }
+    calculateBrokerage();
+*/
 }
 
 long double Stock::getTotal()
@@ -57,3 +91,7 @@ long double Stock::getBrokerage()
 }
 
 
+void Stock::reset()
+{
+    price = total = brokerage = qty = 0;
+}

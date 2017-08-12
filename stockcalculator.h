@@ -34,6 +34,9 @@ private slots:
 
     void on_lineEdit_total_textEdited(const QString &total);
 
+
+    void on_pushButton_reset_clicked();
+
 private:
     Ui::StockCalculator *ui;
     Stock stock;

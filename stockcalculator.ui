@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>347</width>
-    <height>368</height>
+    <width>435</width>
+    <height>304</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -113,7 +113,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButton_reset">
       <property name="text">
        <string>Reset</string>
       </property>
@@ -157,7 +157,7 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Designed by : Dr. Fady Morris Milad</string>
+         <string>Created by : Dr. Fady Morris Milad</string>
         </property>
        </widget>
       </item>
@@ -170,7 +170,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>347</width>
+     <width>435</width>
      <height>22</height>
     </rect>
    </property>

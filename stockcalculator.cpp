@@ -46,7 +46,17 @@ void StockCalculator::on_lineEdit_qty_textEdited(const QString &qty)
 
 void StockCalculator::on_lineEdit_total_textEdited(const QString &total)
 {
-    stock.setQty(total.toULongLong()/stock.getPrice());
+    if(ui->radioButton_buy->isChecked())
+    {
+        //stock.setQty((total.toDouble() - stock.getBrokerage())/stock.getPrice());
+        stock.setTotal(total.toDouble(),stock.getPrice(), true);
+    }
+    else
+    {
+        //stock.setQty((total.toDouble() + stock.getBrokerage())/stock.getPrice());
+        stock.setTotal(total.toDouble(),stock.getPrice(), false);
+
+    }
     ui->lineEdit_qty->setText(QString::number(stock.getQty()));
     updateBrokerage();
 }
@@ -81,3 +91,13 @@ void StockCalculator::updateBrokerage()
     ui->label_brokerage_value->setText(qStringFromLongDouble(stock.getBrokerage()));
 }
 
+
+void StockCalculator::on_pushButton_reset_clicked()
+{
+    ui->radioButton_buy->setChecked(true);
+    ui->lineEdit_price->setText("");
+    ui->lineEdit_qty->setText("");
+    ui->lineEdit_total->setText("");
+    ui->label_brokerage_value->setText("");
+    stock.reset();
+}
