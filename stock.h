@@ -16,7 +16,7 @@ public:
     void setQty(unsigned long long);
     unsigned long long getQty();
 
-    void setTotal(long double total, long double price, bool buyFlag);
+    void setTotal(long double total, bool buyFlag);
     long double getTotal();
     long double getBrokerage();
     void reset();

@@ -51,12 +51,12 @@ void StockCalculator::on_lineEdit_total_textEdited(const QString &total)
     if(ui->radioButton_buy->isChecked())
     {
         //stock.setQty((total.toDouble() - stock.getBrokerage())/stock.getPrice());
-        stock.setTotal(total.toDouble(),stock.getPrice(), true);
+        stock.setTotal(total.toDouble(), true);
     }
     else
     {
         //stock.setQty((total.toDouble() + stock.getBrokerage())/stock.getPrice());
-        stock.setTotal(total.toDouble(),stock.getPrice(), false);
+        stock.setTotal(total.toDouble(), false);
 
     }
     ui->lineEdit_qty->setText(QString::number(stock.getQty()));

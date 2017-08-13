@@ -53,31 +53,22 @@ void Stock::calculateBrokerage()
     brokerage = 11 + getVariableBrokerage(total);
 }
 
-void Stock::setTotal(long double total, long double price, bool buyFlag)
+void Stock::setTotal(long double total, bool buyFlag)
 {
     this->total = total;
     calculateBrokerage();
     if(buyFlag)
     {
-        this->qty = (this->total - this->brokerage) / price ;
+        this->total -= this->brokerage;
+        ///this->qty = (this->total - this->brokerage) / price ;
     }
     else
     {
-        this->qty = (this->total + this->brokerage) / price ;
+        this->total += this->brokerage;
     }
-/*
-    this->total = total;
-    this->price = price;
-    if(buyFlag) //Calculate for buying operation
-    {
-        this->qty = (total + 11)/(price - getVariableBrokerage(price));
-    }
-    else
-    {
-        this->qty = (total - 11)/(price + getVariableBrokerage(price));
-    }
-    calculateBrokerage();
-*/
+
+    this->qty = this->total / this->price;
+
 }
 
 long double Stock::getTotal()
