@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>437</width>
-    <height>340</height>
+    <height>354</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,7 +25,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="lineEdit_stockname">
         <property name="font">
          <font>
           <weight>50</weight>
@@ -202,7 +202,8 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Created by : Dr. Fady Morris Milad</string>
+         <string>Created by : Dr. Fady Morris Milad
+	           +201227190992</string>
         </property>
        </widget>
       </item>
@@ -229,6 +230,20 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_always_on_top">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Always On Top</string>
+   </property>
+   <property name="toolTip">
+    <string>Always On Top</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

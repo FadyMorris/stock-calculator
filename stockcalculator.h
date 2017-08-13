@@ -37,6 +37,8 @@ private slots:
 
     void on_pushButton_reset_clicked();
 
+    void on_lineEdit_stockname_editingFinished();
+
 private:
     Ui::StockCalculator *ui;
     Stock stock;

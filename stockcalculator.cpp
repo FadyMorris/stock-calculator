@@ -6,6 +6,8 @@ StockCalculator::StockCalculator(QWidget *parent) :
     ui(new Ui::StockCalculator), stock()
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
+    ui->mainToolBar->hide();
 }
 
 StockCalculator::~StockCalculator()
@@ -101,3 +103,11 @@ void StockCalculator::on_pushButton_reset_clicked()
     ui->label_brokerage_value->setText("");
     stock.reset();
 }
+
+
+
+void StockCalculator::on_lineEdit_stockname_editingFinished()
+{
+    QWidget::setWindowTitle(ui->lineEdit_stockname->text());
+}
+
