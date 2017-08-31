@@ -1,5 +1,5 @@
 # stock-calculator
-Calculate the brokerage of buying and selling stock in [Egyptian Exchange (EGX)](http://www.egx.com.eg).
+Calculate the brokerage of buying and selling stocks in [Egyptian Exchange (EGX)](http://www.egx.com.eg).
 
 ## Description :
 
